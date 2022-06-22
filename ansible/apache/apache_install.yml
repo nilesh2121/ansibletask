@@ -1,0 +1,10 @@
+---
+- name: install apache
+  become: yes
+  hosts: 192.168.233.132
+  tasks:
+    - name : install apache
+      ansible.builtin.apt:
+        name: apache2
+        update_cache: yes
+        state: present

@@ -1,0 +1,19 @@
+---
+- name: 
+---
+- name: install java
+  become: yes
+  host: 192.168.233.132
+  tasks:
+    - name: install java
+      ansible.builtin.apt:
+        name: openjdk-11-jdk
+        update_cache: yes
+install java
+  become: yes
+  host: 192.168.233.132
+  tasks:
+    - name: install java
+      ansible.builtin.apt:
+        name: openjdk-11-jdk
+        update_cache: yes

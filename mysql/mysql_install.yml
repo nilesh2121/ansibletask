@@ -1,0 +1,18 @@
+---
+- name: install mysql
+  become: yes
+  hosts: 192.168.233.133
+  tasks:
+    - name: install package
+      ansible.builtin.apt:
+        name: mysql-server
+        update_cache: yes
+        state: present
+      when: ansible_facts['os_family'] == "Debian"
+    - name: start the services
+      ansible.builtin.systemd: 
+        name: mysql.service
+        state: started
+        enabled: yes
+      when: ansible_facts['os_family'] == "Debian"
+
